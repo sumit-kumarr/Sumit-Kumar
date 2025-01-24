@@ -11,15 +11,15 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showLogin, setShowLogin] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
   };
 
-  const closeLogin = () => {
-    setShowLogin(True);
-  }
+  // const closeLogin = () => {
+  //   setShowLogin(True);
+  // }
 
 
   // useEffect(() => {
@@ -32,7 +32,7 @@ const Header = () => {
     
     >
 
-      <div className="fixed min-h-full flex items-center flex-col p-12 top-0 list-none bg-black text-white rounded-sm justify-between"
+      <div className="fixed min-h-full flex items-center flex-col p-12 top-0 list-none bg-blue-600 text-white rounded-sm justify-between"
       
       >
 
@@ -47,13 +47,20 @@ const Header = () => {
         </div>
 
         <div className="flex items-center">
-          <button className="bg-white text-3xl text-black px-8 rounded-xl cursor-pointer" onClick={toggleLogin}>{showLogin ? 'Login' : 'Logout'}</button>
-          {showLogin && <Login onClose={closeLogin} />}
+          <button onClick={toggleLogin} className="bg-white text-3xl text-black px-8 rounded-xl cursor-pointer hover:border border-red-800">Login</button>
         </div>
       </div>
 
+      {showLogin && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="relative p-10 rounded-xl left-10">
+          <Login toggleLogin={toggleLogin} />
+          </div>
+        </div>
+      )}
 
-      <div className='w-full min-h-screen flex items-center justify-center flex-row bg-blue-600'
+
+      <div className='w-full min-h-screen flex items-center justify-center flex-row bg-black text-white'
       
         initial={{ opacity: 0, y: -20 }}
         animate={{ duration: 1 }}
@@ -75,14 +82,14 @@ const Header = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
 
-              >Welcome </motion.span>
+              >One </motion.span>
 
               <motion.span className='text-red-600 text-5xl'
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ duration: 1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 2 }}
-              >To Sanchalak</motion.span>
+              >Platform , All Your Work </motion.span>
 
 
               <motion.span className='flex mt-5 gap-1 py-1 px-2 border rounded-full text-sm md:text-base border-red-600 text-white text-center'
@@ -107,7 +114,7 @@ const Header = () => {
 
                 </p>
 
-              <img className='max-w-full h-auto' src="Heroo.png" alt="" />
+              {/* <img className='max-w-full h-auto' src="Heroo.png" alt="" /> */}
 
               </div>
 

@@ -140,13 +140,14 @@ import Thoughts from './components/Thoughts';
 const App = () => {
   return (
     <div>
+      
       <Header/>
       
         <Routes>
-          <Route path ="/home" element={Home} />
-          <Route path = "/updates" element={Updates} />
-          <Route path = "/pricing" element= {Pricing} />
-          <Route path = "/thoughts" element = {Thoughts}/>
+          <Route path ='/home' element={Home} />
+          <Route path = '/updates' element={Updates} />
+          <Route path = '/pricing' element= {Pricing} />
+          <Route path = '/thoughts' element = {Thoughts}/>
 
           </Routes>
           

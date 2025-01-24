@@ -10,11 +10,11 @@ import AppContextProvider from "./components/Context/AppContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
       <AppContextProvider>
-    {/* <Provider store={store}> */}
+    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    {/* </Provider> */}
+    </Provider>
       </AppContextProvider>
   </React.StrictMode>
 );
