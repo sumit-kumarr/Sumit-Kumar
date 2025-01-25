@@ -131,7 +131,7 @@ import './Background.css';
 
 import React from 'react';
 import Header from './pages/Header';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Router } from 'react-router-dom';
 import Home from './components/Home';
 import Updates from './components/Updates';
 import Pricing from './components/Pricing';
@@ -142,12 +142,11 @@ const App = () => {
     <div>
       
       <Header/>
-      
         <Routes>
-          <Route path ='/home' element={Home} />
-          <Route path = '/updates' element={Updates} />
-          <Route path = '/pricing' element= {Pricing} />
-          <Route path = '/thoughts' element = {Thoughts}/>
+          <Route path ='/home' element={<Home/>} />
+          <Route path = '/updates' element={<Updates/>} />
+          <Route path = '/pricing' element= {<Pricing/>}/>
+          <Route path = '/thoughts' element = {<Thoughts/>}/>
 
           </Routes>
           
@@ -155,5 +154,5 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
 

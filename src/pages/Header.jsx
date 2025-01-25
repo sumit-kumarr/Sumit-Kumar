@@ -39,10 +39,10 @@ const Header = () => {
         <div className=" w-full space-y-8 mt-10 items-center">
           <h1 className='text-4xl font-bold text-red-600'>Sanchalak</h1>
           <ul className="space-x-10 items-center">
-            <Link to="/home"> <li className="text-2xl gap-4">Home</li></Link>
-            <Link to="/updates"> <li className="text-2xl gap-4">Updates</li></Link>
-            <Link to="/pricing"><li className="text-2xl gap-4">Pricing</li></Link>
-            <Link to="/thoughts"> <li className="text-2xl gap-4">Thoughts</li></Link>
+            <Link to='/home'> <li className="text-2xl gap-4">Home</li></Link>
+            <Link to='/updates'> <li className="text-2xl gap-4">Updates</li></Link>
+            <Link to='/pricing'><li className="text-2xl gap-4">Pricing</li></Link>
+            <Link to='/thoughts'> <li className="text-2xl gap-4">Thoughts</li></Link>
           </ul>
         </div>
 
