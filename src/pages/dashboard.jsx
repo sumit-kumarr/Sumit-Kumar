@@ -25,7 +25,7 @@ const TaskTable = ({ tasks }) => {
 
   const TableHeader = () => (
     <thead className='border-b border-gray-300 '>
-      <tr className='text-black text-left'>
+      <tr className='text-white text-left'>
         <th className='py-2'>Task Title</th>
         <th className='py-2'>Priority</th>
         <th className='py-2'>Team</th>
@@ -95,7 +95,7 @@ const TaskTable = ({ tasks }) => {
   );
   return (
     <>
-      <div className='w-full md:w-2/3 drop-shadow-lg backdrop-blur px-2 md:px-4 pt-4 pb-4 shadow-md rounded text-white border  animated-border'>
+      <div className='w-full md:w-2/3 drop-shadow-lg backdrop-blur px-2 md:px-4 pt-4 pb-4 shadow-md rounded text-white border animated-border hover:bg-black hover:animate-shak'>
         <table className='w-full'>
           <TableHeader />
           <tbody>
@@ -150,7 +150,7 @@ const UserTable = ({ users }) => {
   );
 
   return (
-    <motion.div className='w-full md:w-1/3 drop-shadow-lg backdrop-blur h-fit px-2 md:px-6 py-4 shadow-md rounded border animated-border'
+    <motion.div className='w-full md:w-1/3 drop-shadow-lg backdrop-blur h-fit px-2 md:px-6 py-4 shadow-md rounded border animated-border hover:bg-black hover:animate-shake hover:scale-105 transition-all duration-300'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.4 }}
@@ -202,7 +202,7 @@ const Dashboard = () => {
 
   const Card = ({ label, count, bg, icon }) => {
     return (
-      <div className='w-full h-32 drop-shadow-lg backdrop-blur  p-5 shadow-md rounded-md flex items-center justify-between animated-border'>
+      <div className='w-full h-32 drop-shadow-lg backdrop-blur  p-5 shadow-md rounded-md flex items-center justify-between animated-border hover:bg-black hover:animate-shake hover:scale-105 transition-all duration-300'>
         <div className='h-full flex flex-1 flex-col justify-between'>
           <p className='text-base text-white'>{label}</p>
           <span className='text-2xl font-semibold text-white'>{count}</span>
@@ -228,7 +228,7 @@ const Dashboard = () => {
         ))}
       </div>
 
-      <div className='w-full drop-shadow-lg backdrop-blur my-16 p-4 rounded shadow-sm border border-white'>
+      <div className='w-full drop-shadow-lg backdrop-blur my-16 p-4 rounded shadow-sm border border-white hover:bg-black hover:animate-shake transition-all duration-300'>
         <h4 className='text-xl text-white font-semibold'>
           Chart by Priority
         </h4>

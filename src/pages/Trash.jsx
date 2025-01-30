@@ -54,7 +54,7 @@ const Trash = () => {
 
   const TableHeader = () => (
     <thead className='border-b border-gray-300'>
-      <tr className='text-black  text-left'>
+      <tr className='text-white text-left'>
         <th className='py-2'>Task Title</th>
         <th className='py-2'>Priority</th>
         <th className='py-2'>Stage</th>
@@ -70,7 +70,7 @@ const Trash = () => {
           <div
             className={clsx("w-4 h-4 rounded-full", TASK_TYPE[item.stage])}
           />
-          <p className='w-full line-clamp-2 text-base text-black'>
+          <p className='w-full line-clamp-2 text-base text-white hover:text-red-700'>
             {item?.title}
           </p>
         </div>
@@ -124,7 +124,7 @@ const Trash = () => {
             />
           </div>
         </div>
-        <div className='bg-white px-2 md:px-6 py-4 shadow-md rounded'>
+        <div className='bg-transparent px-2 md:px-6 py-4 shadow-md rounded hover:bg-black hover:animate-shake hover:text-white transition-all duration-300'>
           <div className='overflow-x-auto'>
             <table className='w-full mb-5'>
               <TableHeader />

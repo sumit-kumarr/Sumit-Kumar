@@ -27,7 +27,7 @@ const TaskCard = ({ task }) => {
 
   return (
     <>
-      <div className='w-full h-fit bg-white shadow-md p-4 rounded'>
+      <div className='w-full h-auto bg-transparent dropshadow-md p-4 rounded border border-white hover:bg-black hover:animate-shake hover:scale-105 transition-all duration-300'>
         <div className='w-full flex justify-between'>
           <div
             className={clsx(
@@ -47,9 +47,9 @@ const TaskCard = ({ task }) => {
             <div
               className={clsx("w-4 h-4 rounded-full", TASK_TYPE[task.stage])}
             />
-            <h4 className='line-clamp-1 text-black'>{task?.title}</h4>
+            <h4 className='line-clamp-1 text-white'>{task?.title}</h4>
           </div>
-          <span className='text-sm text-gray-600'>
+          <span className='text-sm text-red-600 '>
             {formatDate(new Date(task?.date))}
           </span>
         </>
@@ -57,15 +57,15 @@ const TaskCard = ({ task }) => {
         <div className='w-full border-t border-gray-200 my-2' />
         <div className='flex items-center justify-between mb-2'>
           <div className='flex items-center gap-3'>
-            <div className='flex gap-1 items-center text-sm text-gray-600'>
+            <div className='flex gap-1 items-center text-sm text-green-600'>
               <BiMessageAltDetail />
               <span>{task?.activities?.length}</span>
             </div>
-            <div className='flex gap-1 items-center text-sm text-gray-600 '>
+            <div className='flex gap-1 items-center text-sm text-green-600'>
               <MdAttachFile />
               <span>{task?.assets?.length}</span>
             </div>
-            <div className='flex gap-1 items-center text-sm text-gray-600 '>
+            <div className='flex gap-1 items-center text-sm text-white '>
               <FaList />
               <span>0/{task?.subTasks?.length}</span>
             </div>
@@ -89,7 +89,7 @@ const TaskCard = ({ task }) => {
         {/* sub tasks */}
         {task?.subTasks?.length > 0 ? (
           <div className='py-4 border-t border-gray-200'>
-            <h5 className='text-base line-clamp-1 text-black'>
+            <h5 className='text-base line-clamp-1 text-green-700'>
               {task?.subTasks[0].title}
             </h5>
 
@@ -105,7 +105,7 @@ const TaskCard = ({ task }) => {
         ) : (
           <>
             <div className='py-4 border-t border-gray-200'>
-              <span className='text-gray-500'>No Sub Task</span>
+              <span className='text-white'>No Sub Task</span>
             </div>
           </>
         )}
@@ -114,10 +114,10 @@ const TaskCard = ({ task }) => {
           <button
             onClick={() => setOpen(true)}
             disabled={user.isAdmin ? false : true}
-            className='w-full flex gap-4 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled::text-gray-300'
+            className='w-full flex gap-4 items-center text-sm text-white font-semibold disabled:cursor-not-allowed disabled::text-gray-300'
           >
-            <IoMdAdd className='text-lg' />
-            <span>ADD SUBTASK</span>
+            <IoMdAdd className='text-lg text-white' />
+            <span className="bg-red-600 px-3 py-1 rounded-full text-white">ADD SUBTASK</span>
           </button>
         </div>
       </div>
